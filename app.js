@@ -147,22 +147,6 @@ app.patch('/api/dashboard/items/:id', (req, res) => {
   );
 });
 
-// Handle HTTP GET requests to '/setcookie'
-app.get('/setcookie', (req, res) => {
-  res.cookie('datas', 'mycookie', {
-    expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // expires 7 days
-    httpOnly: true,
-    secure: true,
-  });
-  res.send('Cookie set successfully');
-});
-
-// Handle HTTP GET requests to '/getcookies'
-app.get('/getcookies', (req, res) => {
-  // Retrieve and send all cookies in the response
-  const cookies = req.cookies;
-  res.json(cookies);
-});
 
 // Handle HTTP GET requests to '/deletecookie'
 app.get('/deletecookie', (req, res) => {
@@ -218,3 +202,5 @@ app.get('/api/dashboard/items', (req, res) => {
     }
   });
 });
+
+
